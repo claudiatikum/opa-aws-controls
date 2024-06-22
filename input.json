@@ -1,0 +1,15 @@
+{
+    "request": {
+      "action": "s3:GetObject",
+      "resource": "arn:aws:s3:::my-bucket/my-object",
+      "user": {
+        "id": "user-id",
+        "roles": ["st-access-role"]
+      },
+      "context": {
+        "ip": "192.168.1.1",
+        "userAgent": "Mozilla/5.0"
+      }
+    }
+  }
+  
