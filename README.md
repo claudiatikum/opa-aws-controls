@@ -7,7 +7,7 @@ The policy should allow access only if one of the roles is st-access-role.
 An example is a user with roles ["admin", "st-access-role"] should be allowed.
 
 Role names could be case-sensitive. Ensure consistency when naming roles.
-An example is  'st-access-role' vs 'ST-ACCESS-ROLE'.
+An example is  st-access-role vs ST-ACCESS-ROLE.
 
 A user with roles empty or without the roles field should be denied access.
 An example is a user with roles: [] or without the roles field should be denied access.

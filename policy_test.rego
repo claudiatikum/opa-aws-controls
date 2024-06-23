@@ -1,18 +1,22 @@
-package aws.s3.access_test
+package s3_access
 
-import data.aws.s3.access.allow
-
-test_allow_access() {
-    input := {"user": {"role": "st-access-role"}}
-    allow
+test_allow_access {
+    allow with input as {
+        "user": {"role": "st-access-role"},
+        "action": "s3:GetObject"
+    }
 }
 
-test_deny_access_different_role() {
-    input := {"user": {"role": "other-role"}}
-    not allow
+test_deny_wrong_role {
+    not allow with input as {
+        "user": {"role": "wrong-role"},
+        "action": "s3:GetObject"
+    }
 }
 
-test_deny_access_no_role() {
-    input := {"user": {}}
-    not allow
+test_deny_wrong_action {
+    not allow with input as {
+        "user": {"role": "st-access-role"},
+        "action": "s3:PutObject"
+    }
 }
