@@ -1,0 +1,7 @@
+{
+    "user": {
+      "role": "st-access-role"
+    },
+    "action": "s3:GetObject"
+  }
+  
